@@ -10,11 +10,7 @@ def main():
     # List where (index = hour * 4 + minute/15)
     dayList = [0] * 96
 
-    ## TESTS ##
-    # print(indexConvert(50))
-    # print(timeConvert('12:30'))
-    # scheduleEvent('17:35', '18:55', 1, dayList)
-    # print(dayList)
+    runTests(dayList)
 
 
 # Given an index in the List, converts it to properly formatted military time
@@ -31,6 +27,13 @@ def scheduleEvent(start, stop, id, dayList):
     r = range(timeConvert(start), timeConvert(stop))
     for i in r:
         dayList[i] = id
+
+def runTests(dayList):
+    ## TESTS ##
+    print(indexConvert(50))
+    print(timeConvert('12:30'))
+    scheduleEvent('17:35', '18:55', 1, dayList)
+    print(dayList)
 
 # Calls the main function
 if __name__== "__main__" : 
