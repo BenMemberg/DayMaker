@@ -1,4 +1,4 @@
-<h3>**CSE 5914 Capstone Project**</h3>
+<h3>CSE 5914 Capstone Project</h3>
 <h4>Group: Ctrl+Alt+Defeat</h4>
 <h4>Application: DayMaker</h4>
 
