@@ -3,13 +3,18 @@ window.onload = function () {
 	  delimiters: ['[[', ']]'],
 	  el: '#app',
 	  data: {
-	    messages: [],
+	    messages: [
+			{
+				'text': 'Hello! Welcome to DayMaker! What would you like to schedule today?',
+				'user': false,
+				'chat_bot': true,
+			}
+		],
 	    input: '',
 	    send_blank: false,
 	    placeholder: 'Send a message to the chatbot...',
 	  },
 	  created: function() {
-	  	
 	  },
 	  methods: {
 		add_message: function() {
@@ -40,7 +45,7 @@ window.onload = function () {
 			        referrer: 'no-referrer',
 			        })
 			        .then(response => response.json()).then((json) => {
-			          	this.messages.push(json['message'])
+						this.messages.push(json['message'])
 			    	})
 			} else {
 				this.send_blank = true;
