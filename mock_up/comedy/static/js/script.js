@@ -64,6 +64,13 @@ window.onload = function () {
 		},
 	  }
 	});
+	var input = document.getElementById("send-text");
+	input.addEventListener("keyup", function(event) {
+		if(event.keyCode === 13) {
+			event.preventDefault();
+			document.getElementById("send").click();
+		}
+	});
 };
 
 	
