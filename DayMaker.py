@@ -8,9 +8,13 @@
 def main():
 
     # List where (index = hour * 4 + minute/15)
-    dayList = [0] * 96
+    dayList = [-1] * 96
 
     runTests(dayList)
+
+def scheduleBounds(start, finish, dayList):
+        dayList[timeConvert(start)] = 0
+        dayList[timeConvert(finish)] = -2
 
 
 # Given an index in the List, converts it to properly formatted military time
@@ -28,12 +32,20 @@ def scheduleEvent(start, stop, id, dayList):
     for i in r:
         dayList[i] = id
 
+# Test function
 def runTests(dayList):
+    
     ## TESTS ##
+    scheduleBounds('17:00', '2:30', dayList)
     print(indexConvert(50))
     print(timeConvert('12:30'))
-    scheduleEvent('17:35', '18:55', 1, dayList)
-    print(dayList)
+    scheduleEvent('20:00', '23:30', 1, dayList)
+    for x in range(len(dayList)):
+        if (dayList[x] != 1):
+                print(indexConvert(x) + ' - ' + str(dayList[x]))
+        else:
+                print(indexConvert(x) + ' - ' + 'Your Concert!')
+        
 
 # Calls the main function
 if __name__== "__main__" : 
