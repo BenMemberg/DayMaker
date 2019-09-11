@@ -1,10 +1,10 @@
 # Event class file
 
 class Event:
-    def __init__(name, id, self):
+    def __init__(self, name, id):
         self.title = name
         self.id = id
 
 
-    def addAddress(address, self):
+    def addAddress(self, address):
         self.location = address
