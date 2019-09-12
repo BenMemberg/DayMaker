@@ -13,8 +13,8 @@ def main():
     runTests(dayList)
 
 def scheduleBounds(start, finish, dayList):
-        dayList[timeConvert(start)] = 0
-        dayList[timeConvert(finish)] = -2
+        dayList[timeConvert(start)] = 'start'
+        dayList[timeConvert(finish)] = 'end'
 
 
 # Given an index in the List, converts it to properly formatted military time
